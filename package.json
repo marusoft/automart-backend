@@ -1,0 +1,36 @@
+{
+  "name": "automart-backend",
+  "version": "1.0.0",
+  "description": "Auto Mart is an online marketplace for automobiles, with Auto Mart users posting their cars for sale.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -r esm app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marusoft/automart-backend.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Nodejs",
+    "Mongoose",
+    "Nodemon",
+    "express",
+    "Backend-development"
+  ],
+  "author": "alimi kehinde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marusoft/automart-backend/issues"
+  },
+  "homepage": "https://github.com/marusoft/automart-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16"
+  }
+}
