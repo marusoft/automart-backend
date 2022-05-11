@@ -46,3 +46,27 @@ export const viewACar = async(req, res) => {
     });
   }
 };
+
+
+export const deleteCar = async(req, res) => {
+  try {
+    const deleteCar = await Car.findByIdAndDelete(req.params._id);
+    if (!deleteCar) {
+      return res.status(404).jsob({
+        message: `Car not found with _id ${req.params._id}`,
+      });
+    }
+    return res.status(200).json({
+      message: "Car post successfully deleted",
+    });
+  } catch (error) {
+    if (error.kind === "ObjectId") {
+      return res.status(404).json({
+        message: `Car not found with _id ${req.params._id}`,
+      });
+    }
+    return res.status(500).json({
+      message: `Could not delete Car with _id  ${req.params._id}`,
+    });
+  }
+};
