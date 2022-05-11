@@ -23,3 +23,26 @@ export const createCar = async (req, res) => {
     });
   }
 };
+
+export const viewACar = async(req, res) => {
+  try {
+    const getASpecificCar = await Car.findById(req.params._id);
+    if (!getASpecificCar) {
+      return res.status(404).json({
+        message: "Car not found",
+      });
+    }
+    return res.status(200).json({
+      getASpecificCar,
+    });
+  } catch (error) {
+    if (error.kind === "ObjectId") {
+      return res.status(404).json({
+        message: `Car not found with id ${req.params._id}`,
+      });
+    }
+    return res.status(500).json({
+      message: `Error retrieving car with id ${req.params._id}`,
+    });
+  }
+};
