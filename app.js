@@ -24,7 +24,7 @@ mongoose
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).json({
     "message": "It all start from localhost"
   })
