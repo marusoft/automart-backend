@@ -1,8 +1,8 @@
 ## automart-backend
+[https://automart-backend.herokuapp.com/](https://automart-backend.herokuapp.com/)
 
-## Decription
+## Description
 Auto Mart is an online marketplace for automobiles, with Auto Mart users posting their cars for sale.
-
 A nodejs based REST application. The project will persist data to a mongodb database.
 
 ## Installation
@@ -47,9 +47,9 @@ A nodejs based REST application. The project will persist data to a mongodb data
 - To run your app server
   - > `npm start`
 
-### API ENDPOINTS
+## API ENDPOINTS
 
-#### API Routes
+## API Routes
 
 | URI                                       | HTTP Method | Description                              |
 | ----------------------------------------- | ----------- | -----------------------------------------|
@@ -58,5 +58,5 @@ A nodejs based REST application. The project will persist data to a mongodb data
 | <code>/api/car/:_id</code>                | `DELETE`    | Users can delete posts.                  |
 
 
-### Deployment
+## Deployment
 [https://www.mongodb.com/developer/how-to/use-atlas-on-heroku/](https://www.mongodb.com/developer/how-to/use-atlas-on-heroku/)
