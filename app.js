@@ -24,6 +24,11 @@ mongoose
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use("/", (req, res) => {
+  res.status(200).json({
+    "message": "It all start from localhost"
+  })
+})
 
 // Routes
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
