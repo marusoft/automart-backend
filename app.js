@@ -13,7 +13,7 @@ const app = express();
 // mongodb+srv://automart:<password>@cluster0.9xdro.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 // db connection
 mongoose
-  .connect(process.env.MONGODB_URI || process.env.DATABASE, {
+  .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
