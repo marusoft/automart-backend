@@ -13,12 +13,12 @@ const app = express();
 // mongodb+srv://automart:<password>@cluster0.9xdro.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 // db connection
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect(process.env.MONGODB_URI || process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("DB Suceessfully connected"))
-  .catch((error) => console.log("DB connection error", error));
+  .then(() => console.log("Database Suceessfully connected"))
+  .catch((error) => console.log("Database Connection Error", error));
 
 // apply middleware
 app.use(cors());
