@@ -56,3 +56,7 @@ A nodejs based REST application. The project will persist data to a mongodb data
 | <code>/api/car</code>                     | `POST`      | Users can post a car sale advertisement. |
 | <code>/api/car/:_id</code>                | `GET`       | Users can view a specific car.           |
 | <code>/api/car/:_id</code>                | `DELETE`    | Users can delete posts.                  |
+
+
+### Deployment
+[https://www.mongodb.com/developer/how-to/use-atlas-on-heroku/](https://www.mongodb.com/developer/how-to/use-atlas-on-heroku/)
