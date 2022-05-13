@@ -1,16 +1,17 @@
 import Car from "../models/car";
 
 export const createCar = async (req, res) => {
-  const { state, manufacturer, amount, model, bodyType } = req.body;
+  const { condition, manufacturer, amount, model, bodyType, imgUrl } = req.body;
   try {
     const car = new Car({
-      state,
+      condition,
       manufacturer,
       amount,
       model,
       bodyType,
+      imgUrl,
     });
-    if (!state || !manufacturer || !amount || !model || !bodyType)
+    if (!condition || !manufacturer || !amount || !model || !bodyType || !imgUrl)
       return res.status(400).send("Fields cannot be empty");
     const saveCar = await car.save();
     return res.status(201).json({
@@ -24,7 +25,20 @@ export const createCar = async (req, res) => {
   }
 };
 
-export const viewACar = async(req, res) => {
+export const viewAllCar = async (req, res) => {
+  try {
+    const allCars = await Car.find();
+    return res.status(200).json({
+      allCars,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
+export const viewACar = async (req, res) => {
   try {
     const getASpecificCar = await Car.findById(req.params._id);
     if (!getASpecificCar) {
@@ -47,8 +61,7 @@ export const viewACar = async(req, res) => {
   }
 };
 
-
-export const deleteCar = async(req, res) => {
+export const deleteCar = async (req, res) => {
   try {
     const deleteCar = await Car.findByIdAndDelete(req.params._id);
     if (!deleteCar) {

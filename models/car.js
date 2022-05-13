@@ -9,7 +9,7 @@ const carSchema = new Schema(
       trim: true,
       required: true,
     },
-    state: {
+    condition: {
       type: String,
       trim: true,
       required: true,
@@ -30,6 +30,11 @@ const carSchema = new Schema(
       required: true,
     },
     bodyType: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    imgUrl: {
       type: String,
       trim: true,
       required: true,
