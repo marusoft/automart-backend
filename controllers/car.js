@@ -11,7 +11,7 @@ export const createCar = async (req, res) => {
       bodyType,
       imgUrl,
     });
-    if (!condition || !manufacturer || !amount || !model || !bodyType || !imgUrl)
+    if (!condition || !manufacturer || !amount || !model || !bodyType)
       return res.status(400).send("Fields cannot be empty");
     const saveCar = await car.save();
     return res.status(201).json({
