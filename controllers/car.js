@@ -1,7 +1,11 @@
 import Car from "../models/car";
+import { uploader } from "../config/cloudinaryConfig";
+import { dataUri } from "../middleware/multer";
 
 export const createCar = async (req, res) => {
-  const { condition, manufacturer, amount, model, bodyType, imgUrl } = req.body;
+  const file = dataUri(req).content;
+  const image = await uploader.upload(file);
+  const { condition, manufacturer, amount, model, bodyType } = req.body;
   try {
     const car = new Car({
       condition,
@@ -9,7 +13,7 @@ export const createCar = async (req, res) => {
       amount,
       model,
       bodyType,
-      imgUrl,
+      imgUrl : image.secure_url,
     });
     if (!condition || !manufacturer || !amount || !model || !bodyType)
       return res.status(400).send("Fields cannot be empty");

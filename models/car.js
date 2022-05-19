@@ -36,9 +36,7 @@ const carSchema = new Schema(
     },
     imgUrl: {
       type: String,
-      // required: true,
-      default:
-        "https://res.cloudinary.com/marusofteamwork/image/upload/v1652806653/car_xuo0fy.jpg",
+      required: true,
     },
   },
   {
